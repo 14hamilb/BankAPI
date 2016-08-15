@@ -9,7 +9,5 @@ namespace BankAPI.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public virtual List<Account> Accounts { get; set; }
-
-        public string UpdateUserName { get; set; }
     }
 }
