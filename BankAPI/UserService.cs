@@ -1,23 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using BankAPI.Models;
 
 namespace BankAPI
 {
     public class UserService
     {
-        private Models.BankAPIContext _context { get; set; }
+        private BankAPIContext _context { get; }
 
-        public UserService(Models.BankAPIContext context)
+        public UserService(BankAPIContext context)
         {
             _context = context;
         }
 
-        public User GetUser(string Name)
+        public User UpdateUser(User updateUser, int userId)
         {
-            return _context.Users.FirstOrDefault(u => u.Name == Name);
+            var currentUser = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+            if (currentUser == null)
+                throw new NullReferenceException("User not found.");
+
+            //Update Name
+            if (!string.IsNullOrEmpty(updateUser.Name) && updateUser.Name != currentUser.Name)
+            {
+                currentUser.Name = updateUser.Name;
+                _context.SaveChanges();
+            }
+
+            return currentUser;
+        }
+
+        public List<User> GetUsers()
+        {
+            return _context.Users.ToList();
         }
     }
 }
