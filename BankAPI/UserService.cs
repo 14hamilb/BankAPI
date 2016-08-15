@@ -8,9 +8,9 @@ namespace BankAPI
 {
     public class UserService
     {
-        private Models.BankAPI _context { get; set; }
+        private Models.BankAPIContext _context { get; set; }
 
-        public UserService(Models.BankAPI context)
+        public UserService(Models.BankAPIContext context)
         {
             _context = context;
         }

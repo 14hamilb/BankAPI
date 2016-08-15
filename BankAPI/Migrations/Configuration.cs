@@ -4,14 +4,14 @@ using BankAPI.Models;
 
 namespace BankAPI.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<Models.BankAPI>
+    internal sealed class Configuration : DbMigrationsConfiguration<Models.BankAPIContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Models.BankAPI context)
+        protected override void Seed(Models.BankAPIContext context)
         {
             var user = new User
             {

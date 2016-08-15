@@ -15,14 +15,14 @@ namespace BankAPI.Controllers
         [Route("")]
         public List<User> GetUsers()
         {
-            return new Models.BankAPI().Users.ToList();
+            return new Models.BankAPIContext().Users.ToList();
         }
 
         [HttpPost]
         [Route("{userId:int}")]
         public User UpdateUser(User updateUser, int userId)
         {
-            var model = new Models.BankAPI();
+            var model = new Models.BankAPIContext();
 
             var currentUser = model.Users.FirstOrDefault(u => u.Id == userId);
 
