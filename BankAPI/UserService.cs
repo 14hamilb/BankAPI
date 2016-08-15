@@ -14,6 +14,8 @@ namespace BankAPI
             _context = context;
         }
 
+        public UserService() {}
+
         public User UpdateUser(User updateUser, int userId)
         {
             var currentUser = _context.Users.FirstOrDefault(u => u.Id == userId);
@@ -34,6 +36,13 @@ namespace BankAPI
         public List<User> GetUsers()
         {
             return _context.Users.ToList();
+        }
+
+        public User TestUserUpdate(User user)
+        {
+            user.Name = "Updated";
+
+            return user;
         }
     }
 }
