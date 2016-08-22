@@ -10,5 +10,6 @@ namespace BankAPI.Models
         public string Name { get; set; }
         public Preferences Preferences { get; set; }
         public virtual List<Account> Accounts { get; set; } = new List<Account>();
+        public virtual List<Transaction> Transactions { get; set; } = new List<Transaction>();
     }
 }

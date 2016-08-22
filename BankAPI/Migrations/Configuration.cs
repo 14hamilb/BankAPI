@@ -21,12 +21,14 @@ namespace BankAPI.Migrations
                     new Account
                     {
                         Name = "Savings",
-                        Balance = 200000.00
+                        Balance = 200000.00,
+                        GUID = "46BE7CE2-4C0B-4F4D-B0B1-F3604F5BC3C8"
                     },
                     new Account
                     {
                         Name = "Credit",
-                        Balance = -10000.00
+                        Balance = -10000.00,
+                        GUID = "1227F3F0-4171-4A58-9820-92E7DB2F29DE"
                     }
                 },
                 Preferences = new Preferences
