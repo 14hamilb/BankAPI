@@ -14,7 +14,7 @@ namespace BankAPI
             _context = context;
         }
 
-        public UserService() {}
+        public UserService() { }
 
         public User UpdateUser(User updateUser, int userId)
         {

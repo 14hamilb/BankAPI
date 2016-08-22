@@ -4,14 +4,14 @@ using BankAPI.Models;
 
 namespace BankAPI.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<Models.BankAPIContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<BankAPIContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Models.BankAPIContext context)
+        protected override void Seed(BankAPIContext context)
         {
             var user = new User
             {
@@ -28,6 +28,12 @@ namespace BankAPI.Migrations
                         Name = "Credit",
                         Balance = -10000.00
                     }
+                },
+                Preferences = new Preferences
+                {
+                    Color = Color.Grey,
+                    FontSize = FontSize.Medium,
+                    RememberMe = true
                 }
             };
             context.Users.Add(user);
